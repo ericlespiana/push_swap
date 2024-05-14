@@ -6,13 +6,13 @@
 /*   By: erpiana <erpiana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 01:01:44 by erpiana           #+#    #+#             */
-/*   Updated: 2024/05/14 02:02:54 by erpiana          ###   ########.fr       */
+/*   Updated: 2024/05/14 07:51:43 by erpiana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-static int	calculate_media_index(t_stack *stack);
+static int	calculate_sum_index(t_stack *stack);
 
 void	put_index(t_push **stacks)
 {
@@ -50,7 +50,7 @@ void	media_and_push(t_push **stacks)
 		size = lst_size((*stacks)->stack_a);
 		if (size == 3)
 			break ;
-		result = calculate_media_index((*stacks)->stack_a);
+		result = calculate_sum_index((*stacks)->stack_a);
 		media = result / size;
 		curr = (*stacks)->stack_a;
 		if (curr->index <= media)
@@ -60,7 +60,7 @@ void	media_and_push(t_push **stacks)
 	}
 }
 
-static int	calculate_media_index(t_stack *stack)
+static int	calculate_sum_index(t_stack *stack)
 {
 	int	result;
 
