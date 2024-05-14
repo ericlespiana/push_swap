@@ -6,7 +6,7 @@
 /*   By: erpiana <erpiana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:32:46 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/05/14 02:00:17 by erpiana          ###   ########.fr       */
+/*   Updated: 2024/05/14 03:18:52 by erpiana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,25 @@ void	init_list(t_push **stacks)
 		exit(1);
 	(*stacks)->stack_a = NULL;
 	(*stacks)->stack_b = NULL;
+	(*stacks)->max_value = 0;
+	(*stacks)->media = 0;
 }
 
-void	init_stack(t_stack **stack)
+t_stack	*init_stack_a(int argc, char **argv)
 {
-	*stack = malloc(sizeof(t_stack));
-	if (!(*stack))
-		return ;
-	(*stack)->data = 0;
-	(*stack)->index = 0;
-	(*stack)->pos = 0;
-	(*stack)->target_pos = 0;
-	(*stack)->cost_a = 0;
-	(*stack)->cost_b = 0;
-	(*stack)->next = NULL;
+	t_stack	*stack_a;
+	t_stack	*tmp;
+	t_stack	*node;
+	int		i;
+
+	i = 1;
+	stack_a = new_node(ft_atoi(argv[i]));
+	tmp = stack_a;
+	while (++i < argc)
+	{
+		node = new_node(ft_atoi(argv[i]));
+		tmp -> next = node;
+		tmp = tmp->next;
+	}
+	return (stack_a);
 }

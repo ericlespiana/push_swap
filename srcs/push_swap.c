@@ -6,7 +6,7 @@
 /*   By: erpiana <erpiana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 00:44:26 by erpiana           #+#    #+#             */
-/*   Updated: 2024/05/14 02:02:27 by erpiana          ###   ########.fr       */
+/*   Updated: 2024/05/14 02:43:05 by erpiana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	push_swap(t_push **stacks)
 {
 	if (is_ordered((*stacks)->stack_a) == 1)
 	{
-		free_list((*stacks)->stack_a);
+		free_lists(*stacks);
 		exit(1);
 	}
-	if (lst_size((*stacks)->stack_a) <= 3)
+	if (lst_size(((*stacks)->stack_a)) <= 3)
 		sort_three(stacks);
 	else
 	{

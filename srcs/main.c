@@ -6,7 +6,7 @@
 /*   By: erpiana <erpiana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:23:20 by erpiana           #+#    #+#             */
-/*   Updated: 2024/05/14 02:02:41 by erpiana          ###   ########.fr       */
+/*   Updated: 2024/05/14 03:26:02 by erpiana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ int	main(int argc, char *argv[])
 
 	ft_parse_arguments(argc, argv);
 	init_list(&stacks);
-	init_stack(&stacks->stack_a);
 	stacks->stack_a = init_stack_a(argc, argv);
 	push_swap(&stacks);
-	free_list(stacks->stack_a);
+	free_lists(stacks);
 	return (0);
 }

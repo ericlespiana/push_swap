@@ -6,7 +6,7 @@
 /*   By: erpiana <erpiana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:50:37 by erpiana           #+#    #+#             */
-/*   Updated: 2024/05/14 02:01:32 by erpiana          ###   ########.fr       */
+/*   Updated: 2024/05/14 03:20:32 by erpiana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ long int	ft_atol(const char *n);
 void		ft_parse_arguments(int argc, char **argv);
 void		ft_error(char *MSG);
 void		init_list(t_push **stacks);
-void		init_stack(t_stack **stack);
 void		pa(t_stack **stack_a, t_stack **stack_b);
 void		pb(t_stack **stack_a, t_stack **stack_b);
 void		sa(t_stack **stack_a);
@@ -73,6 +72,7 @@ void		find_target_pos(t_push **stacks);
 void		calculate_costs(t_push **stacks);
 void		total_cost(t_push **stacks);
 void		find_op(t_push **stacks);
+void		free_lists(t_push *stacks);
 
 # define INT_MIN -2147483648
 # define INT_MAX  2147483647
